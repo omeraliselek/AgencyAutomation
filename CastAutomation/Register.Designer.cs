@@ -77,7 +77,7 @@
             this.label18 = new System.Windows.Forms.Label();
             this.TxtEmailRegister = new System.Windows.Forms.TextBox();
             this.BtnRegister = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BtnCleanRegister = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -547,17 +547,18 @@
             this.BtnRegister.UseVisualStyleBackColor = false;
             this.BtnRegister.Click += new System.EventHandler(this.BtnRegister_Click);
             // 
-            // button2
+            // BtnCleanRegister
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button2.Location = new System.Drawing.Point(718, 504);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(143, 32);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "TEMİZLE";
-            this.button2.UseVisualStyleBackColor = false;
+            this.BtnCleanRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.BtnCleanRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.BtnCleanRegister.ForeColor = System.Drawing.Color.White;
+            this.BtnCleanRegister.Location = new System.Drawing.Point(718, 504);
+            this.BtnCleanRegister.Name = "BtnCleanRegister";
+            this.BtnCleanRegister.Size = new System.Drawing.Size(143, 32);
+            this.BtnCleanRegister.TabIndex = 26;
+            this.BtnCleanRegister.Text = "TEMİZLE";
+            this.BtnCleanRegister.UseVisualStyleBackColor = false;
+            this.BtnCleanRegister.Click += new System.EventHandler(this.BtnCleanRegister_Click);
             // 
             // Register
             // 
@@ -565,7 +566,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1044, 561);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.BtnCleanRegister);
             this.Controls.Add(this.BtnRegister);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
@@ -638,7 +639,7 @@
         private System.Windows.Forms.MaskedTextBox MTextBoxjopPhoneRegister;
         private System.Windows.Forms.MaskedTextBox MtextBoxHomePhoneRegister;
         private System.Windows.Forms.MaskedTextBox MtextBoxMobilPhoneRegister;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BtnCleanRegister;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;

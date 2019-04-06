@@ -93,5 +93,16 @@ namespace CastAutomation
             TextBoxEraser();
             
         }
+
+        private void BtnCleanRegister_Click(object sender, EventArgs e)
+        {
+            DialogResult DeleteWarning = new DialogResult();
+            DeleteWarning = MessageBox.Show("Do you agree to delete all content?", "!WARNİNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+
+            if (DeleteWarning == DialogResult.Yes)
+            {
+                TextBoxEraser();
+            }
+        }
     }
 }
