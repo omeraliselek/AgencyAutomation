@@ -21,6 +21,53 @@ namespace CastAutomation
 
         ProjectContext db = new ProjectContext();
 
+        public void TextBoxEraser()
+        {
+
+            foreach (Control item in groupBox1.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+
+
+            foreach (Control item in groupBox2.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+
+
+            foreach (Control item in groupBox3.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+
+            foreach (Control item in groupBox4.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+
+            foreach (Control item in groupBox5.Controls)
+            {
+                if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+            }
+        }
+           
+
       private void BtnRegister_Click(object sender, EventArgs e)
         {
             AppUser appUser = new AppUser();
@@ -43,6 +90,7 @@ namespace CastAutomation
             db.appUsers.Add(appUser);
             db.SaveChanges();
             MessageBox.Show("Kayıt Gerçekleşti");
+            TextBoxEraser();
             
         }
     }
