@@ -1,5 +1,6 @@
 ﻿using CastAutomation.MODEL.ORM.Context;
 using CastAutomation.MODEL.ORM.Entity;
+using CastAutomation.MODEL.ORM.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -66,14 +67,22 @@ namespace CastAutomation
                 }
             }
         }
-           
 
-      private void BtnRegister_Click(object sender, EventArgs e)
+        private void Register_Load(object sender, EventArgs e)
+        {
+            CmbBoxPleaceOfBirthRegister.DataSource = Enum.GetValues(typeof(MODEL.ORM.Enum.City));
+            CmbcGenderRegister.DataSource = Enum.GetValues(typeof(Gender));
+            CmbxEyeColorRegister.DataSource = Enum.GetValues(typeof(EyeColor));
+            CmboxHairColurRegister.DataSource = Enum.GetValues(typeof(HairColour));
+        }
+
+        private void BtnRegister_Click(object sender, EventArgs e)
         {
             AppUser appUser = new AppUser();
             appUser.FirstName = TxtFirstNameRegister.Text;
             appUser.LastName = TxtLastNameRegister.Text;
             appUser.DateOfBirth = DateTimeDateOfBirthRegister.Value;
+                                  = CmbcGenderRegister.Text
             appUser.job = TxtJopRegister.Text;
             appUser.Size = TxtSizeRegister.Text;
             appUser.Weight = TxtWeightRegister.Text;
@@ -91,7 +100,7 @@ namespace CastAutomation
             db.SaveChanges();
             MessageBox.Show("Kayıt Gerçekleşti");
             TextBoxEraser();
-            
+
         }
 
         private void BtnCleanRegister_Click(object sender, EventArgs e)
@@ -99,10 +108,21 @@ namespace CastAutomation
             DialogResult DeleteWarning = new DialogResult();
             DeleteWarning = MessageBox.Show("Do you agree to delete all content?", "!WARNİNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
+           
+
             if (DeleteWarning == DialogResult.Yes)
             {
                 TextBoxEraser();
             }
+
         }
+
+        
     }
 }
+
+
+
+
+
+

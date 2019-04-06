@@ -578,6 +578,7 @@
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cast Agency Player Add";
+            this.Load += new System.EventHandler(this.Register_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
