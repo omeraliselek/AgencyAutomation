@@ -71,7 +71,6 @@ namespace CastAutomation
         private void Register_Load(object sender, EventArgs e)
         {
             CmbBoxPleaceOfBirthRegister.DataSource = Enum.GetValues(typeof(MODEL.ORM.Enum.City));
-            CmbcGenderRegister.DataSource = Enum.GetValues(typeof(Gender));
             CmbxEyeColorRegister.DataSource = Enum.GetValues(typeof(EyeColor));
             CmboxHairColurRegister.DataSource = Enum.GetValues(typeof(HairColour));
         }
@@ -82,7 +81,18 @@ namespace CastAutomation
             appUser.FirstName = TxtFirstNameRegister.Text;
             appUser.LastName = TxtLastNameRegister.Text;
             appUser.DateOfBirth = DateTimeDateOfBirthRegister.Value;
-                                  = CmbcGenderRegister.Text
+
+            if (radioButtonErkek.Checked)
+            {
+                appUser.Gender = radioButtonErkek.Text;
+            }
+
+            else if (radioButtonKadin.Checked)
+            {
+                appUser.Gender = radioButtonKadin.Text;
+            }
+
+
             appUser.job = TxtJopRegister.Text;
             appUser.Size = TxtSizeRegister.Text;
             appUser.Weight = TxtWeightRegister.Text;

@@ -71,7 +71,6 @@
     <Compile Include="MODEL\ORM\Entity\BaseEntity.cs" />
     <Compile Include="MODEL\ORM\Enum\City.cs" />
     <Compile Include="MODEL\ORM\Enum\EyeColor.cs" />
-    <Compile Include="MODEL\ORM\Enum\Gender.cs" />
     <Compile Include="MODEL\ORM\Enum\HairColour.cs" />
     <Compile Include="MODEL\ORM\Enum\Role.cs" />
     <Compile Include="MODEL\ORM\Enum\Status.cs" />

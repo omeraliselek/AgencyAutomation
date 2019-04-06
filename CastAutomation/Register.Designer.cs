@@ -38,8 +38,6 @@
             this.TxtJopRegister = new System.Windows.Forms.TextBox();
             this.CmbBoxPleaceOfBirthRegister = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.CmbcGenderRegister = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.DateTimeDateOfBirthRegister = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -78,12 +76,16 @@
             this.TxtEmailRegister = new System.Windows.Forms.TextBox();
             this.BtnRegister = new System.Windows.Forms.Button();
             this.BtnCleanRegister = new System.Windows.Forms.Button();
+            this.GrpGender = new System.Windows.Forms.GroupBox();
+            this.radioButtonErkek = new System.Windows.Forms.RadioButton();
+            this.radioButtonKadin = new System.Windows.Forms.RadioButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.GrpGender.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtFirstNameRegister
@@ -96,6 +98,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox1.Controls.Add(this.GrpGender);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label20);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -103,8 +106,6 @@
             this.groupBox1.Controls.Add(this.TxtJopRegister);
             this.groupBox1.Controls.Add(this.CmbBoxPleaceOfBirthRegister);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.CmbcGenderRegister);
-            this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.DateTimeDateOfBirthRegister);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -152,7 +153,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 402);
+            this.label6.Location = new System.Drawing.Point(54, 414);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 13;
@@ -160,7 +161,7 @@
             // 
             // TxtJopRegister
             // 
-            this.TxtJopRegister.Location = new System.Drawing.Point(94, 399);
+            this.TxtJopRegister.Location = new System.Drawing.Point(94, 411);
             this.TxtJopRegister.Name = "TxtJopRegister";
             this.TxtJopRegister.Size = new System.Drawing.Size(175, 20);
             this.TxtJopRegister.TabIndex = 12;
@@ -168,7 +169,7 @@
             // CmbBoxPleaceOfBirthRegister
             // 
             this.CmbBoxPleaceOfBirthRegister.FormattingEnabled = true;
-            this.CmbBoxPleaceOfBirthRegister.Location = new System.Drawing.Point(94, 372);
+            this.CmbBoxPleaceOfBirthRegister.Location = new System.Drawing.Point(94, 384);
             this.CmbBoxPleaceOfBirthRegister.Name = "CmbBoxPleaceOfBirthRegister";
             this.CmbBoxPleaceOfBirthRegister.Size = new System.Drawing.Size(176, 21);
             this.CmbBoxPleaceOfBirthRegister.TabIndex = 11;
@@ -176,28 +177,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(9, 375);
+            this.label5.Location = new System.Drawing.Point(9, 387);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Place of birth :";
-            // 
-            // CmbcGenderRegister
-            // 
-            this.CmbcGenderRegister.FormattingEnabled = true;
-            this.CmbcGenderRegister.Location = new System.Drawing.Point(94, 345);
-            this.CmbcGenderRegister.Name = "CmbcGenderRegister";
-            this.CmbcGenderRegister.Size = new System.Drawing.Size(176, 21);
-            this.CmbcGenderRegister.TabIndex = 9;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(38, 348);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 13);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Gender :";
             // 
             // DateTimeDateOfBirthRegister
             // 
@@ -560,6 +544,40 @@
             this.BtnCleanRegister.UseVisualStyleBackColor = false;
             this.BtnCleanRegister.Click += new System.EventHandler(this.BtnCleanRegister_Click);
             // 
+            // GrpGender
+            // 
+            this.GrpGender.Controls.Add(this.radioButtonKadin);
+            this.GrpGender.Controls.Add(this.radioButtonErkek);
+            this.GrpGender.ForeColor = System.Drawing.Color.White;
+            this.GrpGender.Location = new System.Drawing.Point(97, 340);
+            this.GrpGender.Name = "GrpGender";
+            this.GrpGender.Size = new System.Drawing.Size(172, 40);
+            this.GrpGender.TabIndex = 17;
+            this.GrpGender.TabStop = false;
+            this.GrpGender.Text = "Gender";
+            // 
+            // radioButtonErkek
+            // 
+            this.radioButtonErkek.AutoSize = true;
+            this.radioButtonErkek.Location = new System.Drawing.Point(12, 16);
+            this.radioButtonErkek.Name = "radioButtonErkek";
+            this.radioButtonErkek.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonErkek.TabIndex = 0;
+            this.radioButtonErkek.TabStop = true;
+            this.radioButtonErkek.Text = "Erkek";
+            this.radioButtonErkek.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonKadin
+            // 
+            this.radioButtonKadin.AutoSize = true;
+            this.radioButtonKadin.Location = new System.Drawing.Point(102, 16);
+            this.radioButtonKadin.Name = "radioButtonKadin";
+            this.radioButtonKadin.Size = new System.Drawing.Size(52, 17);
+            this.radioButtonKadin.TabIndex = 1;
+            this.radioButtonKadin.TabStop = true;
+            this.radioButtonKadin.Text = "Kadın";
+            this.radioButtonKadin.UseVisualStyleBackColor = true;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,6 +608,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            this.GrpGender.ResumeLayout(false);
+            this.GrpGender.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -606,8 +626,6 @@
         private System.Windows.Forms.TextBox TxtJopRegister;
         private System.Windows.Forms.ComboBox CmbBoxPleaceOfBirthRegister;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox CmbcGenderRegister;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox CmboxHairColurRegister;
         private System.Windows.Forms.Label label10;
@@ -644,5 +662,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.GroupBox GrpGender;
+        private System.Windows.Forms.RadioButton radioButtonKadin;
+        private System.Windows.Forms.RadioButton radioButtonErkek;
     }
 }
