@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,7 +32,27 @@ namespace CastAutomation
                 {
                     item.Text = "";
                 }
+
+                if (item is ComboBox)
+                {
+                    item.Text = "Seçiniz";
+                }
+
+              
+
+               
             }
+
+
+            foreach (Control item in GrpGender.Controls)
+            {
+                var radioButton = item as RadioButton;
+                if (radioButton != null)
+                    radioButton.Checked = false;
+
+
+            }
+
 
             
 
@@ -41,6 +62,16 @@ namespace CastAutomation
                 if (item is TextBox)
                 {
                     item.Text = "";
+                }
+
+                if (item is ComboBox)
+                {
+                    item.Text = "Seçiniz";
+                }
+
+                if (item is NumericUpDown)
+                {
+                    item.Text = "0";
                 }
             }
 
@@ -56,6 +87,11 @@ namespace CastAutomation
             foreach (Control item in groupBox4.Controls)
             {
                 if (item is TextBox)
+                {
+                    item.Text = "";
+                }
+
+                if (item is MaskedTextBox )
                 {
                     item.Text = "";
                 }
@@ -109,6 +145,8 @@ namespace CastAutomation
                 MessageBox.Show("Göz Rengini Seçiniz");
             }
 
+
+
             
             else
             {
@@ -135,8 +173,8 @@ namespace CastAutomation
 
                 appUser.job = TxtJopRegister.Text;
 
-                appUser.Size = numericUpDownSizeRegister.ToString();
-                appUser.Weight = numericUpDownWeightRegister.ToString();
+                appUser.Size = Convert.ToInt32(numericUpDownSizeRegister.Value.ToString());
+                appUser.Weight = Convert.ToInt32(numericUpDownWeightRegister.Value.ToString());
                 appUser.eyeColor = (EyeColor)Enum.Parse(typeof(EyeColor), CmbxEyeColorRegister.Text);
                 appUser.hairColour = (HairColour)Enum.Parse(typeof(HairColour), CmboxHairColurRegister.Text);
                 appUser.Biography = TxtBiography.Text;
@@ -213,6 +251,24 @@ namespace CastAutomation
             {
                 e.Handled = true;
             }
+        }
+
+        private void TxtEmailRegister_Validating(object sender, CancelEventArgs e)
+        {
+            if (TxtEmailRegister.Text !="")
+            {
+                try
+                {
+                    MailAddress ma = new MailAddress(TxtEmailRegister.Text);
+                }
+                catch
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Geçersiz e-posta adresi");
+                }
+
+            }
+           
         }
     }
     }

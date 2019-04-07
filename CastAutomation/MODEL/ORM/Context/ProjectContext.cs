@@ -13,7 +13,7 @@ namespace CastAutomation.MODEL.ORM.Context
     {
         public ProjectContext()
         {
-            Database.Connection.ConnectionString = "Server=.;Database=AgencyAutomation29;UID=tnr;Pwd=123456;";
+            Database.Connection.ConnectionString = "Server=.;Database=AgencyAutomation45;UID=tnr;Pwd=123456;";
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

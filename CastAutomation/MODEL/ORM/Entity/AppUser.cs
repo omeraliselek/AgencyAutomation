@@ -16,8 +16,8 @@ namespace CastAutomation.MODEL.ORM.Entity
         public string Gender { get; set; }
         public City City { get; set; }
         public string job { get; set; }
-        public string Size { get; set; }
-        public string Weight { get; set; }
+        public int Size { get; set; }
+        public int Weight { get; set; }
         public EyeColor eyeColor { get; set; }
         public HairColour hairColour { get; set; }
         public string Biography { get; set; }

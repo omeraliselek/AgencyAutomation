@@ -278,7 +278,7 @@
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(383, 32);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(316, 210);
+            this.groupBox2.Size = new System.Drawing.Size(316, 168);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Physical Properties";
@@ -544,6 +544,7 @@
             this.TxtEmailRegister.Name = "TxtEmailRegister";
             this.TxtEmailRegister.Size = new System.Drawing.Size(187, 20);
             this.TxtEmailRegister.TabIndex = 14;
+            this.TxtEmailRegister.Validating += new System.ComponentModel.CancelEventHandler(this.TxtEmailRegister_Validating);
             // 
             // BtnRegister
             // 
