@@ -69,8 +69,7 @@ namespace CastAutomation
                 }
             }
         }
-
-        
+ 
 
     
         private void Register_Load(object sender, EventArgs e)
@@ -87,16 +86,13 @@ namespace CastAutomation
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-
-            if (TxtFirstNameRegister.Text == "" || TxtLastNameRegister.Text == "" || TxtJopRegister.Text==""
-             ||TxtSizeRegister.Text =="" || TxtWeightRegister.Text=="" || TxtBiography.Text =="" )
+            if (TxtFirstNameRegister.Text == "" || TxtLastNameRegister.Text == "" || TxtJopRegister.Text == ""
+              || TxtSizeRegister.Text == "" || TxtWeightRegister.Text == "" || TxtBiography.Text == ""
+              || MtextBoxMobilPhoneRegister.Text == "" || MtextBoxHomePhoneRegister.Text == ""
+              || TxtBoxAddressRegister.Text == "" || TxtEmailRegister.Text == "")
             {
                 MessageBox.Show("Boş Alan Bırakmayınız");
             }
-
-            
-
-            
 
             else
             {
