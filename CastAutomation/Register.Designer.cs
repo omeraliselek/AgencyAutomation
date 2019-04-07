@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.TxtFirstNameRegister = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GrpGender = new System.Windows.Forms.GroupBox();
+            this.radioButtonKadin = new System.Windows.Forms.RadioButton();
+            this.radioButtonErkek = new System.Windows.Forms.RadioButton();
             this.button3 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -76,16 +79,14 @@
             this.TxtEmailRegister = new System.Windows.Forms.TextBox();
             this.BtnRegister = new System.Windows.Forms.Button();
             this.BtnCleanRegister = new System.Windows.Forms.Button();
-            this.GrpGender = new System.Windows.Forms.GroupBox();
-            this.radioButtonErkek = new System.Windows.Forms.RadioButton();
-            this.radioButtonKadin = new System.Windows.Forms.RadioButton();
+            this.LblKarakterSayisi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.GrpGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.GrpGender.SuspendLayout();
             this.SuspendLayout();
             // 
             // TxtFirstNameRegister
@@ -119,6 +120,40 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Personal  Information";
+            // 
+            // GrpGender
+            // 
+            this.GrpGender.Controls.Add(this.radioButtonKadin);
+            this.GrpGender.Controls.Add(this.radioButtonErkek);
+            this.GrpGender.ForeColor = System.Drawing.Color.White;
+            this.GrpGender.Location = new System.Drawing.Point(97, 340);
+            this.GrpGender.Name = "GrpGender";
+            this.GrpGender.Size = new System.Drawing.Size(172, 40);
+            this.GrpGender.TabIndex = 17;
+            this.GrpGender.TabStop = false;
+            this.GrpGender.Text = "Gender";
+            // 
+            // radioButtonKadin
+            // 
+            this.radioButtonKadin.AutoSize = true;
+            this.radioButtonKadin.Location = new System.Drawing.Point(102, 16);
+            this.radioButtonKadin.Name = "radioButtonKadin";
+            this.radioButtonKadin.Size = new System.Drawing.Size(52, 17);
+            this.radioButtonKadin.TabIndex = 1;
+            this.radioButtonKadin.TabStop = true;
+            this.radioButtonKadin.Text = "Kadın";
+            this.radioButtonKadin.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonErkek
+            // 
+            this.radioButtonErkek.AutoSize = true;
+            this.radioButtonErkek.Location = new System.Drawing.Point(12, 16);
+            this.radioButtonErkek.Name = "radioButtonErkek";
+            this.radioButtonErkek.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonErkek.TabIndex = 0;
+            this.radioButtonErkek.TabStop = true;
+            this.radioButtonErkek.Text = "Erkek";
+            this.radioButtonErkek.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -312,11 +347,12 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox3.Controls.Add(this.LblKarakterSayisi);
             this.groupBox3.Controls.Add(this.TxtBiography);
             this.groupBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox3.Location = new System.Drawing.Point(383, 206);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(316, 334);
+            this.groupBox3.Size = new System.Drawing.Size(316, 343);
             this.groupBox3.TabIndex = 22;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Biography";
@@ -328,7 +364,7 @@
             this.TxtBiography.Name = "TxtBiography";
             this.TxtBiography.Size = new System.Drawing.Size(274, 294);
             this.TxtBiography.TabIndex = 14;
-            this.TxtBiography.Text = "Write your biography here.";
+            this.TxtBiography.TextChanged += new System.EventHandler(this.TxtBiography_TextChanged);
             // 
             // groupBox4
             // 
@@ -544,39 +580,14 @@
             this.BtnCleanRegister.UseVisualStyleBackColor = false;
             this.BtnCleanRegister.Click += new System.EventHandler(this.BtnCleanRegister_Click);
             // 
-            // GrpGender
+            // LblKarakterSayisi
             // 
-            this.GrpGender.Controls.Add(this.radioButtonKadin);
-            this.GrpGender.Controls.Add(this.radioButtonErkek);
-            this.GrpGender.ForeColor = System.Drawing.Color.White;
-            this.GrpGender.Location = new System.Drawing.Point(97, 340);
-            this.GrpGender.Name = "GrpGender";
-            this.GrpGender.Size = new System.Drawing.Size(172, 40);
-            this.GrpGender.TabIndex = 17;
-            this.GrpGender.TabStop = false;
-            this.GrpGender.Text = "Gender";
-            // 
-            // radioButtonErkek
-            // 
-            this.radioButtonErkek.AutoSize = true;
-            this.radioButtonErkek.Location = new System.Drawing.Point(12, 16);
-            this.radioButtonErkek.Name = "radioButtonErkek";
-            this.radioButtonErkek.Size = new System.Drawing.Size(53, 17);
-            this.radioButtonErkek.TabIndex = 0;
-            this.radioButtonErkek.TabStop = true;
-            this.radioButtonErkek.Text = "Erkek";
-            this.radioButtonErkek.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonKadin
-            // 
-            this.radioButtonKadin.AutoSize = true;
-            this.radioButtonKadin.Location = new System.Drawing.Point(102, 16);
-            this.radioButtonKadin.Name = "radioButtonKadin";
-            this.radioButtonKadin.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonKadin.TabIndex = 1;
-            this.radioButtonKadin.TabStop = true;
-            this.radioButtonKadin.Text = "Kadın";
-            this.radioButtonKadin.UseVisualStyleBackColor = true;
+            this.LblKarakterSayisi.AutoSize = true;
+            this.LblKarakterSayisi.Location = new System.Drawing.Point(28, 321);
+            this.LblKarakterSayisi.Name = "LblKarakterSayisi";
+            this.LblKarakterSayisi.Size = new System.Drawing.Size(92, 13);
+            this.LblKarakterSayisi.TabIndex = 15;
+            this.LblKarakterSayisi.Text = "Karakter Sayısı : 0";
             // 
             // Register
             // 
@@ -599,6 +610,8 @@
             this.Load += new System.EventHandler(this.Register_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.GrpGender.ResumeLayout(false);
+            this.GrpGender.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -608,8 +621,6 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            this.GrpGender.ResumeLayout(false);
-            this.GrpGender.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -665,5 +676,6 @@
         private System.Windows.Forms.GroupBox GrpGender;
         private System.Windows.Forms.RadioButton radioButtonKadin;
         private System.Windows.Forms.RadioButton radioButtonErkek;
+        private System.Windows.Forms.Label LblKarakterSayisi;
     }
 }

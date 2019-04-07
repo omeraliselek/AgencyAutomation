@@ -33,6 +33,8 @@ namespace CastAutomation
                 }
             }
 
+            
+
 
             foreach (Control item in groupBox2.Controls)
             {
@@ -68,52 +70,83 @@ namespace CastAutomation
             }
         }
 
+        
+
+    
         private void Register_Load(object sender, EventArgs e)
         {
             CmbBoxPleaceOfBirthRegister.DataSource = Enum.GetValues(typeof(MODEL.ORM.Enum.City));
             CmbxEyeColorRegister.DataSource = Enum.GetValues(typeof(EyeColor));
             CmboxHairColurRegister.DataSource = Enum.GetValues(typeof(HairColour));
+
+
+            TxtBiography.MaxLength = 260;
+
+
         }
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
-            AppUser appUser = new AppUser();
-            appUser.FirstName = TxtFirstNameRegister.Text;
-            appUser.LastName = TxtLastNameRegister.Text;
-            appUser.DateOfBirth = DateTimeDateOfBirthRegister.Value;
 
-            if (radioButtonErkek.Checked)
+            if (TxtFirstNameRegister.Text == "" || TxtLastNameRegister.Text == "" || TxtJopRegister.Text==""
+             ||TxtSizeRegister.Text =="" || TxtWeightRegister.Text=="" || TxtBiography.Text =="" )
             {
-                appUser.Gender = radioButtonErkek.Text;
+                MessageBox.Show("Boş Alan Bırakmayınız");
             }
 
-            else if (radioButtonKadin.Checked)
+            
+
+            
+
+            else
             {
-                appUser.Gender = radioButtonKadin.Text;
+                AppUser appUser = new AppUser();
+                appUser.FirstName = TxtFirstNameRegister.Text;
+                appUser.LastName = TxtLastNameRegister.Text;
+                appUser.DateOfBirth = DateTimeDateOfBirthRegister.Value;
+
+                if (radioButtonErkek.Checked)
+                {
+                    appUser.Gender = radioButtonErkek.Text;
+                }
+
+                else if (radioButtonKadin.Checked)
+                {
+                    appUser.Gender = radioButtonKadin.Text;
+                }
+
+
+
+                appUser.City = (City)Enum.Parse(typeof(City), CmbBoxPleaceOfBirthRegister.Text);
+
+
+                appUser.job = TxtJopRegister.Text;
+                appUser.Size = TxtSizeRegister.Text;
+                appUser.Weight = TxtWeightRegister.Text;
+                appUser.Biography = TxtBiography.Text;
+                appUser.MobilPhone = MtextBoxMobilPhoneRegister.Text;
+                appUser.HomePhone = MtextBoxHomePhoneRegister.Text;
+                appUser.jobPhone = MTextBoxjopPhoneRegister.Text;
+                appUser.Address = TxtBoxAddressRegister.Text;
+                appUser.Email = TxtEmailRegister.Text;
+                appUser.Facebook = TxtFacebookRegister.Text;
+                appUser.Twitter = TxtTwitterRegister.Text;
+                appUser.instagram = TxtinstagramRegister.Text;
+                appUser.Website = TxtWebSitesiRegister.Text;
+                db.appUsers.Add(appUser);
+                db.SaveChanges();
+                MessageBox.Show("Kayıt Gerçekleşti");
+                TextBoxEraser();
+
             }
-
-
-            appUser.job = TxtJopRegister.Text;
-            appUser.Size = TxtSizeRegister.Text;
-            appUser.Weight = TxtWeightRegister.Text;
-            appUser.Biography = TxtBiography.Text;
-            appUser.MobilPhone = MtextBoxMobilPhoneRegister.Text;
-            appUser.HomePhone = MtextBoxHomePhoneRegister.Text;
-            appUser.jobPhone = MTextBoxjopPhoneRegister.Text;
-            appUser.Address = TxtBoxAddressRegister.Text;
-            appUser.Email = TxtEmailRegister.Text;
-            appUser.Facebook = TxtFacebookRegister.Text;
-            appUser.Twitter = TxtTwitterRegister.Text;
-            appUser.instagram = TxtinstagramRegister.Text;
-            appUser.Website = TxtWebSitesiRegister.Text;
-            db.appUsers.Add(appUser);
-            db.SaveChanges();
-            MessageBox.Show("Kayıt Gerçekleşti");
-            TextBoxEraser();
-
         }
 
-        private void BtnCleanRegister_Click(object sender, EventArgs e)
+
+
+
+
+
+            private void BtnCleanRegister_Click(object sender, EventArgs e)
         {
             DialogResult DeleteWarning = new DialogResult();
             DeleteWarning = MessageBox.Show("Do you agree to delete all content?", "!WARNİNG", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -127,9 +160,19 @@ namespace CastAutomation
 
         }
 
-        
+        private void TxtBiography_TextChanged(object sender, EventArgs e)
+        {
+            int u = TxtBiography.TextLength;
+            LblKarakterSayisi.Text = "Karakter Sayısı: " + TxtBiography.TextLength.ToString();
+
+            if (u == 260)
+            {
+                MessageBox.Show("Maksimum sınıra ulaştınız!");
+            }
+        }
     }
-}
+    }
+
 
 
 

@@ -14,6 +14,7 @@ namespace CastAutomation.MODEL.ORM.Entity
         public string LastName { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string Gender { get; set; }
+        public City City { get; set; }
         public string job { get; set; }
         public string Size { get; set; }
         public string Weight { get; set; }
