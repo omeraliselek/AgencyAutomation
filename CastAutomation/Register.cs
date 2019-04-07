@@ -70,12 +70,6 @@ namespace CastAutomation
             }
         }
 
-
-      
-
-
-
-
         private void Register_Load(object sender, EventArgs e)
         {
             CmbBoxPleaceOfBirthRegister.DataSource = Enum.GetValues(typeof(MODEL.ORM.Enum.City));
@@ -100,21 +94,22 @@ namespace CastAutomation
                 MessageBox.Show("Boş Alan Bırakmayınız");
             }
             ////Combobox Boş Geçilemez Kontrol
-            if (CmbBoxPleaceOfBirthRegister.Text == "Seçiniz")
+            else if (CmbBoxPleaceOfBirthRegister.Text == "Seçiniz")
             {
                 MessageBox.Show("Doğum Yerini Seçiniz");
             }
 
-            if (CmboxHairColurRegister.Text=="Seçiniz")
+           else if (CmboxHairColurRegister.Text=="Seçiniz")
             {
                 MessageBox.Show("Saç Rengini Seçiniz");
             }
 
-            if (CmbxEyeColorRegister.Text=="Seçiniz")
+            else if (CmbxEyeColorRegister.Text=="Seçiniz")
             {
                 MessageBox.Show("Göz Rengini Seçiniz");
             }
 
+            
             else
             {
                 //Veritabanına Gönder
@@ -207,6 +202,14 @@ namespace CastAutomation
         private void TxtLastNameRegister_KeyPress(object sender, KeyPressEventArgs e)
         {
         if (char.IsNumber(e.KeyChar))//metin giriliyor rakam girilemiyor
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtJopRegister_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsNumber(e.KeyChar))//metin giriliyor rakam girilemiyor
             {
                 e.Handled = true;
             }

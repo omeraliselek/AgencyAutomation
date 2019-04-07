@@ -203,6 +203,7 @@
             this.TxtJopRegister.Name = "TxtJopRegister";
             this.TxtJopRegister.Size = new System.Drawing.Size(175, 20);
             this.TxtJopRegister.TabIndex = 12;
+            this.TxtJopRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtJopRegister_KeyPress);
             // 
             // CmbBoxPleaceOfBirthRegister
             // 
