@@ -8,13 +8,14 @@ namespace CastAutomation.MODEL.ORM.Enum
 {
     public enum EyeColor
     {
-        siyah = 0,
-        mavi =1,
-        yeşil =2,
-        kahverengi =3,
-        ela =4,
-        BalRengi =5,
-        Amber =6
+        Seçiniz=0,
+        siyah = 1,
+        mavi =2,
+        yeşil =3,
+        kahverengi =4,
+        ela =5,
+        BalRengi =6,
+        Amber =7
 
     }
 }

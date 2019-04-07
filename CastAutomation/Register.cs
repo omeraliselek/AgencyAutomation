@@ -69,9 +69,13 @@ namespace CastAutomation
                 }
             }
         }
- 
 
-    
+
+      
+
+
+
+
         private void Register_Load(object sender, EventArgs e)
         {
             CmbBoxPleaceOfBirthRegister.DataSource = Enum.GetValues(typeof(MODEL.ORM.Enum.City));
@@ -86,16 +90,34 @@ namespace CastAutomation
 
         private void BtnRegister_Click(object sender, EventArgs e)
         {
+
+            //TextBox Boş Geçilemez Kontrol
             if (TxtFirstNameRegister.Text == "" || TxtLastNameRegister.Text == "" || TxtJopRegister.Text == ""
-              || TxtSizeRegister.Text == "" || TxtWeightRegister.Text == "" || TxtBiography.Text == ""
+                || TxtBiography.Text == ""
               || MtextBoxMobilPhoneRegister.Text == "" || MtextBoxHomePhoneRegister.Text == ""
               || TxtBoxAddressRegister.Text == "" || TxtEmailRegister.Text == "")
             {
                 MessageBox.Show("Boş Alan Bırakmayınız");
             }
+            ////Combobox Boş Geçilemez Kontrol
+            if (CmbBoxPleaceOfBirthRegister.Text == "Seçiniz")
+            {
+                MessageBox.Show("Doğum Yerini Seçiniz");
+            }
+
+            if (CmboxHairColurRegister.Text=="Seçiniz")
+            {
+                MessageBox.Show("Saç Rengini Seçiniz");
+            }
+
+            if (CmbxEyeColorRegister.Text=="Seçiniz")
+            {
+                MessageBox.Show("Göz Rengini Seçiniz");
+            }
 
             else
             {
+                //Veritabanına Gönder
                 AppUser appUser = new AppUser();
                 appUser.FirstName = TxtFirstNameRegister.Text;
                 appUser.LastName = TxtLastNameRegister.Text;
@@ -117,8 +139,11 @@ namespace CastAutomation
 
 
                 appUser.job = TxtJopRegister.Text;
-                appUser.Size = TxtSizeRegister.Text;
-                appUser.Weight = TxtWeightRegister.Text;
+
+                appUser.Size = numericUpDownSizeRegister.ToString();
+                appUser.Weight = numericUpDownWeightRegister.ToString();
+                appUser.eyeColor = (EyeColor)Enum.Parse(typeof(EyeColor), CmbxEyeColorRegister.Text);
+                appUser.hairColour = (HairColour)Enum.Parse(typeof(HairColour), CmboxHairColurRegister.Text);
                 appUser.Biography = TxtBiography.Text;
                 appUser.MobilPhone = MtextBoxMobilPhoneRegister.Text;
                 appUser.HomePhone = MtextBoxHomePhoneRegister.Text;
@@ -132,6 +157,8 @@ namespace CastAutomation
                 db.appUsers.Add(appUser);
                 db.SaveChanges();
                 MessageBox.Show("Kayıt Gerçekleşti");
+
+                //TextBoxları Temizle
                 TextBoxEraser();
 
             }
@@ -158,12 +185,30 @@ namespace CastAutomation
 
         private void TxtBiography_TextChanged(object sender, EventArgs e)
         {
+
+            //Biyografi Bölümüne Maksimum Girilecek Karakter Sayısı
             int u = TxtBiography.TextLength;
             LblKarakterSayisi.Text = "Karakter Sayısı: " + TxtBiography.TextLength.ToString();
 
             if (u == 260)
             {
                 MessageBox.Show("Maksimum sınıra ulaştınız!");
+            }
+        }
+
+        private void TxtFirstNameRegister_KeyPress(object sender, KeyPressEventArgs e)
+        {
+      if (char.IsNumber(e.KeyChar))//metin giriliyor rakam girilemiyor
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void TxtLastNameRegister_KeyPress(object sender, KeyPressEventArgs e)
+        {
+        if (char.IsNumber(e.KeyChar))//metin giriliyor rakam girilemiyor
+            {
+                e.Handled = true;
             }
         }
     }

@@ -8,8 +8,9 @@ namespace CastAutomation.MODEL.ORM.Enum
 {
     public  enum HairColour
     {
-        Siyah =0,
-        Kahverengi =1,
+        Seçiniz =0,
+        Siyah =1,
+        Kahverengi =2,
         Sari =3
 
     }

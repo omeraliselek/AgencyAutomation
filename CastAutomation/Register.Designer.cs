@@ -52,9 +52,7 @@
             this.CmbxEyeColorRegister = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.TxtWeightRegister = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TxtSizeRegister = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TxtBiography = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -80,6 +78,8 @@
             this.BtnRegister = new System.Windows.Forms.Button();
             this.BtnCleanRegister = new System.Windows.Forms.Button();
             this.LblKarakterSayisi = new System.Windows.Forms.Label();
+            this.numericUpDownSizeRegister = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDownWeightRegister = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             this.GrpGender.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +87,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeRegister)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightRegister)).BeginInit();
             this.SuspendLayout();
             // 
             // TxtFirstNameRegister
@@ -95,6 +97,7 @@
             this.TxtFirstNameRegister.Name = "TxtFirstNameRegister";
             this.TxtFirstNameRegister.Size = new System.Drawing.Size(173, 20);
             this.TxtFirstNameRegister.TabIndex = 2;
+            this.TxtFirstNameRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtFirstNameRegister_KeyPress);
             // 
             // groupBox1
             // 
@@ -249,6 +252,7 @@
             this.TxtLastNameRegister.Name = "TxtLastNameRegister";
             this.TxtLastNameRegister.Size = new System.Drawing.Size(173, 20);
             this.TxtLastNameRegister.TabIndex = 4;
+            this.TxtLastNameRegister.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtLastNameRegister_KeyPress);
             // 
             // label1
             // 
@@ -262,14 +266,14 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.groupBox2.Controls.Add(this.numericUpDownWeightRegister);
+            this.groupBox2.Controls.Add(this.numericUpDownSizeRegister);
             this.groupBox2.Controls.Add(this.CmboxHairColurRegister);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.CmbxEyeColorRegister);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.TxtWeightRegister);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.TxtSizeRegister);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.groupBox2.Location = new System.Drawing.Point(383, 32);
             this.groupBox2.Name = "groupBox2";
@@ -321,13 +325,6 @@
             this.label8.TabIndex = 17;
             this.label8.Text = "Weight :";
             // 
-            // TxtWeightRegister
-            // 
-            this.TxtWeightRegister.Location = new System.Drawing.Point(93, 59);
-            this.TxtWeightRegister.Name = "TxtWeightRegister";
-            this.TxtWeightRegister.Size = new System.Drawing.Size(173, 20);
-            this.TxtWeightRegister.TabIndex = 16;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -336,13 +333,6 @@
             this.label7.Size = new System.Drawing.Size(33, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Size :";
-            // 
-            // TxtSizeRegister
-            // 
-            this.TxtSizeRegister.Location = new System.Drawing.Point(93, 33);
-            this.TxtSizeRegister.Name = "TxtSizeRegister";
-            this.TxtSizeRegister.Size = new System.Drawing.Size(173, 20);
-            this.TxtSizeRegister.TabIndex = 14;
             // 
             // groupBox3
             // 
@@ -589,6 +579,25 @@
             this.LblKarakterSayisi.TabIndex = 15;
             this.LblKarakterSayisi.Text = "Karakter Sayısı : 0";
             // 
+            // numericUpDownSizeRegister
+            // 
+            this.numericUpDownSizeRegister.Location = new System.Drawing.Point(91, 31);
+            this.numericUpDownSizeRegister.Maximum = new decimal(new int[] {
+            500,
+            0,
+            0,
+            0});
+            this.numericUpDownSizeRegister.Name = "numericUpDownSizeRegister";
+            this.numericUpDownSizeRegister.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownSizeRegister.TabIndex = 22;
+            // 
+            // numericUpDownWeightRegister
+            // 
+            this.numericUpDownWeightRegister.Location = new System.Drawing.Point(91, 58);
+            this.numericUpDownWeightRegister.Name = "numericUpDownWeightRegister";
+            this.numericUpDownWeightRegister.Size = new System.Drawing.Size(64, 20);
+            this.numericUpDownWeightRegister.TabIndex = 23;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -621,6 +630,8 @@
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSizeRegister)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWeightRegister)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -643,9 +654,7 @@
         private System.Windows.Forms.ComboBox CmbxEyeColorRegister;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TxtWeightRegister;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TxtSizeRegister;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox TxtBiography;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -677,5 +686,7 @@
         private System.Windows.Forms.RadioButton radioButtonKadin;
         private System.Windows.Forms.RadioButton radioButtonErkek;
         private System.Windows.Forms.Label LblKarakterSayisi;
+        private System.Windows.Forms.NumericUpDown numericUpDownSizeRegister;
+        private System.Windows.Forms.NumericUpDown numericUpDownWeightRegister;
     }
 }

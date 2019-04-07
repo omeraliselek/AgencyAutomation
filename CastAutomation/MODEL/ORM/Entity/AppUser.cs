@@ -18,6 +18,8 @@ namespace CastAutomation.MODEL.ORM.Entity
         public string job { get; set; }
         public string Size { get; set; }
         public string Weight { get; set; }
+        public EyeColor eyeColor { get; set; }
+        public HairColour hairColour { get; set; }
         public string Biography { get; set; }
         public string MobilPhone { get; set; }
         public string HomePhone { get; set; }
